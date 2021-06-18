@@ -33,6 +33,4 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(firstName);
         return matcher.matches();
     }
-
-
 }
