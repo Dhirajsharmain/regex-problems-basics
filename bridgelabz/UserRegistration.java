@@ -10,7 +10,7 @@ public class UserRegistration {
     }
 
     private static boolean ValidateFirstName(String firstName){
-        Pattern p = Pattern.compile("^[A-Z]+[a-zA-Z]{2}$");
+        Pattern p = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
         Matcher m = p.matcher(firstName);
         return m.matches();
     }
