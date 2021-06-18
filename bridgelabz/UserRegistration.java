@@ -20,15 +20,15 @@ public class UserRegistration {
      */
     public static void main(String[] args) {
         String name = "Abc";
-        System.out.println(ValidateFirstName(name));
+        System.out.println(validateFirstName(name));
     }
 
     /**
      * Method for validating the user first name using regex.
-     * @param firstName
+     * @param firstName : user's first name
      * @return
      */
-    private static boolean ValidateFirstName(String firstName){
+    private static boolean validateFirstName(String firstName){
         Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
         Matcher matcher = pattern.matcher(firstName);
         return matcher.matches();
