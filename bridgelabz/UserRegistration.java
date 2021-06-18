@@ -29,9 +29,9 @@ public class UserRegistration {
      * @return
      */
     private static boolean ValidateFirstName(String firstName){
-        Pattern p = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
-        Matcher m = p.matcher(firstName);
-        return m.matches();
+        Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
+        Matcher matcher = pattern.matcher(firstName);
+        return matcher.matches();
     }
 
 
