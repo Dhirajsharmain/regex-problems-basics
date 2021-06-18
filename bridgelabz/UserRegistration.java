@@ -23,7 +23,7 @@ public class UserRegistration {
         String lastName = "Sharma";
         String email = "abc.xyz@bl.co.in";
         String mNumber = "91 8988373573";
-        String password = "656cac683";
+        String password = "656cAc683";
         System.out.println(validateFirstName(firstName));
         System.out.println(validateLastName(lastName));
         System.out.println(validateEmail(email));
@@ -34,7 +34,7 @@ public class UserRegistration {
     /**
      * Method for validating the user first name using regex.
      * @param firstName : user's first name
-     * @return
+     * @return : true or false
      */
     private static boolean validateFirstName(String firstName){
         Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
@@ -45,7 +45,7 @@ public class UserRegistration {
     /**
      * Method for validating the user last name using regex.
      * @param lastName : user's last name
-     * @return
+     * @return : true or false
      */
     private static boolean validateLastName(String lastName){
         Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
@@ -78,11 +78,12 @@ public class UserRegistration {
     /**
      * Method for validating the user's password using regex.
      * Rule1 – minimum 8 characters
+     * Rule2 – Should have at least 1 Upper Case - NOTE – All rules must be passed
      * @param password : user password
      * @return : true or false.
      */
     private static boolean validatePassword(String password){
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])[a-zA-Z0-9]{8,}$");
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }

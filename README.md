@@ -30,3 +30,9 @@ _Description :_ As a User need to follow pre-defined Password rules.
 
 Rule1 – minimum 8 characters 
 - NOTE – All rules must be passed
+
+**UC6-PasswordRule2**
+
+_Description :_ As a User need to follow pre-defined Password rules.
+
+Rule2 – Should have at least 1 Upper Case - NOTE – All rules must be passed
