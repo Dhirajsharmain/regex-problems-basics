@@ -31,7 +31,7 @@ public class UserRegistration {
      * @return
      */
     private static boolean validateFirstName(String firstName){
-        Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-zA-Z]{2,}$");
+        Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
         Matcher matcher = pattern.matcher(firstName);
         return matcher.matches();
     }
@@ -42,7 +42,7 @@ public class UserRegistration {
      * @return
      */
     private static boolean validateLastName(String lastName){
-        Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
