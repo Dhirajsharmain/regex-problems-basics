@@ -40,3 +40,8 @@ Rule2 – Should have at least 1 Upper Case - NOTE – All rules must be passed
 **UC7-PasswordRule3**
 
 _Description :_ Rule3 – Should have at least 1 numeric number in the password
+
+**UC8-PasswordRule4**
+
+_Description_ : Rule4 – Has exactly 1 Special Character
+- NOTE – All rules must be passed
