@@ -22,9 +22,11 @@ public class UserRegistration {
         String firstName = "Dhiraj";
         String lastName = "Sharma";
         String email = "abc.xyz@bl.co.in";
+        String mNumber = "91 8988373573";
         System.out.println(validateFirstName(firstName));
         System.out.println(validateLastName(lastName));
         System.out.println(validateEmail(email));
+        System.out.println(validatingMobile(mNumber));
     }
 
     /**
@@ -52,11 +54,22 @@ public class UserRegistration {
     /**
      * Method for validating the user's email using regex
      * @param email : user's email
-     * @return
+     * @return : true or false
      */
     private static boolean validateEmail(String email){
         Pattern pattern = Pattern.compile("^[a-zA-Z]+[.][a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]*$");
         Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    /**
+     * Method for validating the user's mobile number using regex
+     * @param mNumber : User's mobile number
+     * @return : true or false
+     */
+    private static boolean validatingMobile(String mNumber){
+        Pattern pattern = Pattern.compile("^[9][1]+\\s\\d{10}$");
+        Matcher matcher = pattern.matcher(mNumber);
         return matcher.matches();
     }
 }
