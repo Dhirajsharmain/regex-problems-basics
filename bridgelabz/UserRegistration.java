@@ -23,10 +23,12 @@ public class UserRegistration {
         String lastName = "Sharma";
         String email = "abc.xyz@bl.co.in";
         String mNumber = "91 8988373573";
+        String password = "656cac683";
         System.out.println(validateFirstName(firstName));
         System.out.println(validateLastName(lastName));
         System.out.println(validateEmail(email));
         System.out.println(validatingMobile(mNumber));
+        System.out.println(validatePassword(password));
     }
 
     /**
@@ -70,6 +72,18 @@ public class UserRegistration {
     private static boolean validatingMobile(String mNumber){
         Pattern pattern = Pattern.compile("^[9][1]+\\s\\d{10}$");
         Matcher matcher = pattern.matcher(mNumber);
+        return matcher.matches();
+    }
+
+    /**
+     * Method for validating the user's password using regex.
+     * Rule1 – minimum 8 characters
+     * @param password : user password
+     * @return : true or false.
+     */
+    private static boolean validatePassword(String password){
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{8,}$");
+        Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
 }
