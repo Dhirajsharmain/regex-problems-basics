@@ -36,3 +36,7 @@ Rule1 – minimum 8 characters
 _Description :_ As a User need to follow pre-defined Password rules.
 
 Rule2 – Should have at least 1 Upper Case - NOTE – All rules must be passed
+
+**UC7-PasswordRule3**
+
+_Description :_ Rule3 – Should have at least 1 numeric number in the password
