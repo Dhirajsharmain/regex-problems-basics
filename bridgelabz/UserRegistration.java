@@ -19,8 +19,10 @@ public class UserRegistration {
      * @param args
      */
     public static void main(String[] args) {
-        String name = "Abc";
-        System.out.println(validateFirstName(name));
+        String firstName = "Dhiraj";
+        String lastName = "Sharma";
+        System.out.println(validateFirstName(firstName));
+        System.out.println(validateLastName(lastName));
     }
 
     /**
@@ -31,6 +33,17 @@ public class UserRegistration {
     private static boolean validateFirstName(String firstName){
         Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
         Matcher matcher = pattern.matcher(firstName);
+        return matcher.matches();
+    }
+
+    /**
+     * Method for validating the user last name using regex.
+     * @param lastName : user's last name
+     * @return
+     */
+    private static boolean validateLastName(String lastName){
+        Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}$");
+        Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
 }
