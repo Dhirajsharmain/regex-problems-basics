@@ -7,7 +7,7 @@
  * @version 1.0
  * @since 18-06-2021 **********************************************************
  */
-package bridgelabz;
+package bridgelabz.services;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
