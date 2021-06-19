@@ -45,3 +45,7 @@ _Description :_ Rule3 – Should have at least 1 numeric number in the password
 
 _Description_ : Rule4 – Has exactly 1 Special Character
 - NOTE – All rules must be passed
+
+**UC9-sampleEmailsValidation**
+
+_Description_ : Should clear all email samples provided separately
