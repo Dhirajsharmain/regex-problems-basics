@@ -26,6 +26,6 @@ public class ValidateEmails {
     }
 
     public static void main(String[] args) {
-        System.out.println(validateEmails("^[a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z]*$","abc@yahoo.com"));
+        System.out.println(validateEmails("^[a-zA-z0-9.+-]+[@]+[a-zA-z0-9]+[.]+[a-zA-z0-9.]{2,}$","abc@yahoo.com"));
     }
 }

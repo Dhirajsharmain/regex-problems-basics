@@ -46,4 +46,58 @@ public class UserRegistrationTest {
         assertFalse(result);
     }
 
+    @Test
+    public void validateEmail_shouldReturnFalse_whenEmailIsNull() {
+        boolean result = userRegistration.validateEmail(null);
+        assertFalse(result);
+    }
+
+    @Test
+    public void validateEmail_shouldReturnFalse_whenEmailMissAnyOfMandatoryParts() {
+        boolean result = userRegistration.validateEmail("@bl.co.in");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validateEmail_shouldReturnFalse_whenEmailMissATSIGN() {
+        boolean result = userRegistration.validateEmail("abc.xyz.co.in");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validateEmail_shouldReturnTrue_whenEmailHasAllMandatoryParts() {
+        boolean result = userRegistration.validateEmail("abc.xyz@bl.co.in");
+        assertTrue(result);
+    }
+
+    @Test
+    public void validateMobile_shouldReturnFalse_whenMobileNumbersAreNull() {
+        boolean result = userRegistration.validatingMobile(null);
+        assertFalse(result);
+    }
+
+    @Test
+    public void validateMobile_shouldReturnFalse_whenCountryCodeIsMissing() {
+        boolean result = userRegistration.validatingMobile("8988373573");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validateMobile_shouldReturnTrue_whenCountryCodeIsMentioned() {
+        boolean result = userRegistration.validatingMobile("91 8988373573");
+        assertTrue(result);
+    }
+
+    @Test
+    public void validateMobile_shouldReturnFalse_whenCountryCodeIsMentionedWithoutSpace() {
+        boolean result = userRegistration.validatingMobile("918988373573");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validateMobile_shouldReturnFalse_whenNumbersIsLessInCount() {
+        boolean result = userRegistration.validatingMobile("91 89883");
+        assertFalse(result);
+    }
+
 }

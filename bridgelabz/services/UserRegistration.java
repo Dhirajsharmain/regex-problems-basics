@@ -54,8 +54,8 @@ public class UserRegistration {
      * @param email : user's email
      * @return : true or false
      */
-    private static boolean validateEmail(String email) {
-        Pattern pattern = Pattern.compile("^[a-zA-Z]+[.][a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]*$");
+    public static boolean validateEmail(String email) {
+        Pattern pattern = Pattern.compile("^[a-zA-z0-9.+-]+[@]+[a-zA-z0-9]+[.]+[a-zA-z0-9.]{2,}$");
         if (email == null) {
             return false;
         }
@@ -69,7 +69,7 @@ public class UserRegistration {
      * @param mNumber : User's mobile number
      * @return : true or false
      */
-    private static boolean validatingMobile(String mNumber) {
+    public static boolean validatingMobile(String mNumber) {
         Pattern pattern = Pattern.compile("^[9][1]+\\s\\d{10}$");
         if (mNumber == null) {
             return false;
@@ -88,7 +88,7 @@ public class UserRegistration {
      * @param password : user password
      * @return : true or false.
      */
-    private static boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
         Pattern pattern = Pattern.compile("^(?=.*[#?!@$%^&*-])(?=.*[A-Z])(?=.*\\d)(?=.*[a-zA-Z]){8,}$");
         if (password == null) {
             return false;
