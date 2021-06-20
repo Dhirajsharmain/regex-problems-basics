@@ -21,7 +21,7 @@ public class ValidateEmails {
      * @return : True or False
      */
     public static boolean validateEmails(String email) {
-        String regex = "^[a-z]{2,}[0-9a-z]+(?=.*[_.-])(?=.*[a-z0-9])[@]+[a-z0-1]{1,}[.]{1}[a-z]{2,4}([.]{0,1}[a-z]{2}){0,1}$";
+        String regex = "^^[a-zA-z0-9.+-]+[@]+[a-zA-z0-9]+[.]+[a-zA-z0-9.]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         if (email == null) {
             return false;
