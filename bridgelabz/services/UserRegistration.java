@@ -89,7 +89,7 @@ public class UserRegistration {
      * @return : true or false.
      */
     public static boolean validatePassword(String password) {
-        Pattern pattern = Pattern.compile("^(?=.*[#?!@$%^&*-])(?=.*[A-Z])(?=.*\\d)(?=.*[a-zA-Z]){8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
         if (password == null) {
             return false;
         }

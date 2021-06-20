@@ -100,4 +100,40 @@ public class UserRegistrationTest {
         assertFalse(result);
     }
 
+    @Test
+    public void validatePassword_shouldReturnFalse_whenPasswordIsNull() {
+        boolean result = userRegistration.validatePassword(null);
+        assertFalse(result);
+    }
+
+    @Test
+    public void validatePassword_shouldReturnTrue_whenPasswordProper() {
+        boolean result = userRegistration.validatePassword("Ah5f@djs");
+        assertTrue(result);
+    }
+
+    @Test
+    public void validatePassword_shouldReturnFalse_whenPasswordMissUpperCaseCharacter() {
+        boolean result = userRegistration.validatePassword("as2@cfr");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validatePassword_shouldReturnFalse_whenPasswordMissNumericCharacter() {
+        boolean result = userRegistration.validatePassword("Ah@jscfr");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validatePassword_shouldReturnFalse_whenPasswordIsLessThan8Characters() {
+        boolean result = userRegistration.validatePassword("Ah@js");
+        assertFalse(result);
+    }
+
+    @Test
+    public void validatePassword_shouldReturnFalse_whenPasswordMissSpecialCharacter() {
+        boolean result = userRegistration.validatePassword("Ah5fkdjs");
+        assertFalse(result);
+    }
+
 }
