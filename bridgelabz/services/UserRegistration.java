@@ -38,7 +38,7 @@ public class UserRegistration {
      * @param name : user input as first or last name
      * @return : true or false
      */
-    private static boolean validateName(String name) {
+    public static boolean validateName(String name) {
         Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
         if (name == null) {
             return false;
