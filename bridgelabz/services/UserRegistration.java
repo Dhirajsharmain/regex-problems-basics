@@ -69,7 +69,7 @@ public class UserRegistration {
      * @param mNumber : User's mobile number
      * @return : true or false
      */
-    private static boolean validatingMobile(String mNumber) {
+    public static boolean validatingMobile(String mNumber) {
         Pattern pattern = Pattern.compile("^[9][1]+\\s\\d{10}$");
         if (mNumber == null) {
             return false;
