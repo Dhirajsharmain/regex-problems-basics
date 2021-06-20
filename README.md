@@ -58,3 +58,7 @@ _Description_ : Write JUnit Test to validate the User Entry for First Name, Last
   case.
 - Happy Test Case validates the Entry Successfully
 - Sad Test Cases fails the Entry
+
+**UC11-JUnitTestForEmails**
+
+_Description_ : Write JUnit Parameterised Test to validate multiple entry for the Email Address.
