@@ -48,4 +48,13 @@ _Description_ : Rule4 – Has exactly 1 Special Character
 
 **UC9-sampleEmailsValidation**
 
-_Description_ : Should clear all email samples provided separately
+_Description_ : Should clear all email samples provided separately.
+
+
+U**C10-jUnitTestForUserEntries**
+
+_Description_ : Write JUnit Test to validate the User Entry for First Name, Last Name, Email, Mobile, and Password.
+- Write Junit Test for Happy as well as Sad test
+  case.
+- Happy Test Case validates the Entry Successfully
+- Sad Test Cases fails the Entry
