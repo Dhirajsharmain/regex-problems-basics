@@ -8,6 +8,7 @@
  */
 package bridgelabz.services;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,10 +28,21 @@ public class ValidateEmails {
             return false;
         }
         Matcher matcher = pattern.matcher(email);
+        if (matcher.matches())
+            return true;
+        else
+            try {
+                throw new ValidationException("Invalid Email");
+            } catch (ValidationException e) {
+                e.printStackTrace();
+            }
         return matcher.matches();
     }
 
     public static void main(String[] args) {
-        System.out.println(validateEmails("abc@yahoo.com"));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Email : ");
+        String useInput = scanner.next();
+        System.out.println(validateEmails(useInput));
     }
 }

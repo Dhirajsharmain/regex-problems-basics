@@ -62,3 +62,8 @@ _Description_ : Write JUnit Test to validate the User Entry for First Name, Last
 **UC11-JUnitTestForEmails**
 
 _Description_ : Write JUnit Parameterised Test to validate multiple entry for the Email Address.
+
+**UC12-CustomExceptions**
+
+_Description_ : Refactor the Code to throw custom exceptions in case of Invalid User Details 
+- Rewrite all Test Cases to take in Custom Exception for Invalid First Name, Last Name, Email, Mobile, and Password

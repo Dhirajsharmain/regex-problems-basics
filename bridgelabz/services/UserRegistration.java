@@ -9,6 +9,7 @@
  */
 package bridgelabz.services;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,15 +21,26 @@ public class UserRegistration {
      * @param args
      */
     public static void main(String[] args) {
-        String firstName = "Dhiraj";
-        String lastName = "Sharma";
-        String email = "abc.xyz@bl.co.in";
-        String mNumber = "91 8988373573";
-        String password = "A3@gfkdhs";
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter First Name : ");
+        String firstName = scanner.next();
         System.out.println(validateName(firstName));
+
+        System.out.print("Enter Last Name : ");
+        String lastName = scanner.next();
         System.out.println(validateName(lastName));
+
+        System.out.print("Enter Email : ");
+        String email = scanner.next();
         System.out.println(validateEmail(email));
+
+        System.out.print("Enter Mobile Number : ");
+        String mNumber = scanner.next();
         System.out.println(validatingMobile(mNumber));
+
+        System.out.print("Enter Password : ");
+        String password = scanner.next();
         System.out.println(validatePassword(password));
     }
 
@@ -44,6 +56,14 @@ public class UserRegistration {
             return false;
         }
         Matcher matcher = pattern.matcher(name);
+        if (matcher.matches())
+            return true;
+        else
+            try {
+                throw new ValidationException("Invalid Name");
+            } catch (ValidationException e) {
+                e.printStackTrace();
+            }
         return matcher.matches();
     }
 
@@ -60,6 +80,14 @@ public class UserRegistration {
             return false;
         }
         Matcher matcher = pattern.matcher(email);
+        if (matcher.matches())
+            return true;
+        else
+            try {
+                throw new ValidationException("Invalid Email");
+            } catch (ValidationException e) {
+                e.printStackTrace();
+            }
         return matcher.matches();
     }
 
@@ -75,6 +103,14 @@ public class UserRegistration {
             return false;
         }
         Matcher matcher = pattern.matcher(mNumber);
+        if (matcher.matches())
+            return true;
+        else
+            try {
+                throw new ValidationException("Invalid Mobile Number");
+            } catch (ValidationException e) {
+                e.printStackTrace();
+            }
         return matcher.matches();
     }
 
@@ -94,6 +130,14 @@ public class UserRegistration {
             return false;
         }
         Matcher matcher = pattern.matcher(password);
+        if (matcher.matches())
+            return true;
+        else
+            try {
+                throw new ValidationException("Invalid Password");
+            } catch (ValidationException e) {
+                e.printStackTrace();
+            }
         return matcher.matches();
     }
 }
