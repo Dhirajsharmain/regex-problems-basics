@@ -38,11 +38,19 @@ public class ValidateEmails {
             }
         return matcher.matches();
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Email : ");
         String useInput = scanner.next();
         System.out.println(validateEmails(useInput));
+
+        IValidateChecker email = (regex, data) -> {
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(data);
+            return matcher.matches();
+        };
+        
+        System.out.println(email.validate("^[a-zA-z0-9.+-]+[@]+[a-zA-z0-9]+[.]+[a-zA-z0-9.]{2,}$",useInput));
+
     }
 }
