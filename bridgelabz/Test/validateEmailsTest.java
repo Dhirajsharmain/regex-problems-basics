@@ -1,6 +1,8 @@
 package bridgelabz.Test;
 
+import bridgelabz.services.RegexEnum;
 import bridgelabz.services.ValidateEmails;
+import bridgelabz.services.ValidationException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,50 +18,50 @@ public class validateEmailsTest {
     }
 
     @Test
-    public void validateEmails_shouldReturnFalse_whenEmailIsNull() {
-        boolean result = validateEmails.validateEmails(null);
+    public void validateEmails_shouldReturnFalse_whenEmailIsNull() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), null);
         assertFalse(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnTrue_whenEmailHasProperPattern() {
-        boolean result = validateEmails.validateEmails("abc.xyz@bl.co.in");
+    public void validateEmails_shouldReturnTrue_whenEmailHasProperPattern() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "abc.xyz@bl.co.in");
         assertTrue(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnTrue_whenEmailIsWithoutSecondTld() {
-        boolean result = validateEmails.validateEmails("abc.xyz@bl.co");
+    public void validateEmails_shouldReturnTrue_whenEmailIsWithoutSecondTld() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "abc.xyz@bl.co");
         assertTrue(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnTrue_whenEmailHasDeshSignBeforeAtsign() {
-        boolean result = validateEmails.validateEmails("abc-xyz@bl.co");
+    public void validateEmails_shouldReturnTrue_whenEmailHasDeshSignBeforeAtsign() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "abc-xyz@bl.co");
         assertTrue(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnTrue_whenEmailHasNumericCharactersBeforeAtsign() {
-        boolean result = validateEmails.validateEmails("abc-100@bl.co");
+    public void validateEmails_shouldReturnTrue_whenEmailHasNumericCharactersBeforeAtsign() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "abc-100@bl.co");
         assertTrue(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnFalse_whenEmailHasMissedATSIGN() {
-        boolean result = validateEmails.validateEmails("abc.xyz.co.in");
+    public void validateEmails_shouldReturnFalse_whenEmailHasMissedATSIGN() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "abc.xyz.co.in");
         assertFalse(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnFalse_whenEmailMissedPortionBeforeAtsign() {
-        boolean result = validateEmails.validateEmails("@bl.co.in");
+    public void validateEmails_shouldReturnFalse_whenEmailMissedPortionBeforeAtsign() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "@bl.co.in");
         assertFalse(result);
     }
 
     @Test
-    public void validateEmails_shouldReturnFalse_whenEmailMissedPortion() {
-        boolean result = validateEmails.validateEmails("@bl.com");
+    public void validateEmails_shouldReturnFalse_whenEmailMissedPortion() throws ValidationException {
+        boolean result = validateEmails.emailValidator.validate(RegexEnum.email.getRegex(), "@bl.com");
         assertFalse(result);
     }
 
